@@ -59,7 +59,7 @@ public class ProgramaRPG {
         // Simulacao
         System.out.println("\n--- Acoes do personagem 1 ---");
         personagem1.atacar();
-        personagem2.receberDano(15);
+        personagem2.receberDano(personagem1.forca);
         personagem1.usarHabilidadeEspecial();
         personagem1.subirDeNivel();
         personagem1.mostrarStatus();
@@ -67,7 +67,7 @@ public class ProgramaRPG {
 
         System.out.println("\n--- Acoes do personagem 2 ---");
         personagem2.atacar();
-        personagem1.receberDano(20);
+        personagem1.receberDano(personagem2.forca);
         personagem2.usarHabilidadeEspecial();
         personagem2.subirDeNivel();
         personagem2.mostrarStatus();
