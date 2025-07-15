@@ -4,51 +4,75 @@ public class ProgramaRPG {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Digite o nome do seu personagem:");
-        String nome = scanner.nextLine();
+        // Primeiro personagem
+        System.out.println("Digite o nome do primeiro personagem:");
+        String nome1 = scanner.nextLine();
 
-        System.out.println("Escolha sua classe:");
+        System.out.println("Escolha a classe do primeiro personagem:");
         System.out.println("1 - MAGO");
         System.out.println("2 - GUERREIRO");
         System.out.print("Digite o numero da classe: ");
-        int escolha = scanner.nextInt();
-        scanner.nextLine(); // Limpa o buffer
+        int escolha1 = scanner.nextInt();
+        scanner.nextLine(); // Limpa buffer
 
-        String classe = "";
-        switch (escolha) {
+        String classe1 = "";
+        switch (escolha1) {
             case 1:
-                classe = "Mago";
+                classe1 = "Mago";
                 break;
             case 2:
-                classe = "Guerreiro";
+                classe1 = "Guerreiro";
                 break;
             default:
-                classe = "Aventureiro";
+                classe1 = "Aventureiro";
                 System.out.println("Classe invalida! Usando classe padrao: Aventureiro.");
         }
 
-        // Criacao do personagem
-        Personagens personagem = new Personagens(nome, classe);
-        Personagens personagem2 = new Personagens(nome, classe);
+        Personagens personagem1 = new Personagens(nome1, classe1);
 
+        // Segundo personagem
+        System.out.println("\nDigite o nome do segundo personagem:");
+        String nome2 = scanner.nextLine();
 
-        // Acoes
-        personagem.mostrarStatus();
-        personagem.atacar();
-        personagem.receberDano();
-        personagem.usarHabilidadeEspecial();
-        personagem.subirDeNivel();
-        personagem.mostrarStatus();
-        personagem.desenharPersonagem(escolha);
+        System.out.println("Escolha a classe do segundo personagem:");
+        System.out.println("1 - MAGO");
+        System.out.println("2 - GUERREIRO");
+        System.out.print("Digite o numero da classe: ");
+        int escolha2 = scanner.nextInt();
+        scanner.nextLine(); // Limpa buffer
 
+        String classe2 = "";
+        switch (escolha2) {
+            case 1:
+                classe2 = "Mago";
+                break;
+            case 2:
+                classe2 = "Guerreiro";
+                break;
+            default:
+                classe2 = "Aventureiro";
+                System.out.println("Classe invalida! Usando classe padrao: Aventureiro.");
+        }
 
-        personagem2.mostrarStatus();
+        Personagens personagem2 = new Personagens(nome2, classe2);
+
+        // Simulacao
+        System.out.println("\n--- Acoes do personagem 1 ---");
+        personagem1.atacar();
+        personagem2.receberDano(15);
+        personagem1.usarHabilidadeEspecial();
+        personagem1.subirDeNivel();
+        personagem1.mostrarStatus();
+        personagem1.desenharPersonagem(escolha1);
+
+        System.out.println("\n--- Acoes do personagem 2 ---");
         personagem2.atacar();
-        personagem2.receberDano();
+        personagem1.receberDano(20);
         personagem2.usarHabilidadeEspecial();
         personagem2.subirDeNivel();
         personagem2.mostrarStatus();
-        personagem2.desenharPersonagem(escolha);
+        personagem2.desenharPersonagem(escolha2);
 
+        scanner.close();
     }
 }

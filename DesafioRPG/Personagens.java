@@ -12,7 +12,7 @@ public class Personagens {
         this.nivel = 1;
         this.vida = 100;
 
-        switch(classe) {
+        switch (classe) {
             case "Mago":
                 mana = 100;
                 forca = 5;
@@ -26,27 +26,43 @@ public class Personagens {
             default:
                 mana = 0;
                 forca = 5;
-                System.out.println("Personagem indefinido! Usando atributos padrao.");
+                System.out.println("Classe indefinida! Usando atributos padrao.");
         }
     }
 
     public void atacar() {
-        System.out.println(nome + " atacou com " + forca + " de dano!");
+        switch (classe) {
+            case "Mago":
+                System.out.println(nome + " lanca uma bola de fogo! Causando " + forca + " de dano.");
+                break;
+            case "Guerreiro":
+                System.out.println(nome + " ataca com sua espada! Causando " + forca + " de dano.");
+                break;
+            default:
+                System.out.println(nome + " ataca com as proprias maos! Causando " + forca + " de dano.");
+        }
     }
 
-    public void receberDano() {
-        int dano = (int)(Math.random() * 100) + 1;
+    public void receberDano(int dano) {
         vida -= dano;
-        if (vida < 0) {
-            vida = 0;
-        }
-        System.out.println(nome + " recebeu " + dano + " de dano! Vida atual: " + vida);
+        if (vida < 0) vida = 0;
+        System.out.println(nome + " recebeu " + dano + " de dano. Vida atual: " + vida);
     }
 
     public void usarHabilidadeEspecial() {
-        int aumento = (int)(Math.random() * 10) + 1;
-        forca += aumento;
-        System.out.println(nome + " usou sua habilidade especial! Forca aumentada em " + aumento);
+        if (classe.equals("Mago")) {
+            if (mana >= 20) {
+                mana -= 20;
+                System.out.println(nome + " usou um feitico poderoso! Mana restante: " + mana);
+            } else {
+                System.out.println(nome + " nao tem mana suficiente para usar o feitiço.");
+            }
+        } else if (classe.equals("Guerreiro")) {
+            System.out.println(nome + " usou Golpe Poderoso! Forca aumentada temporariamente.");
+            forca += 2;
+        } else {
+            System.out.println(nome + " usou uma habilidade misteriosa!");
+        }
     }
 
     public void subirDeNivel() {
@@ -71,17 +87,15 @@ public class Personagens {
         System.out.println("Nivel: " + nivel);
         System.out.println("Vida: " + vida);
         System.out.println("Forca: " + forca);
-
         if (classe.equals("Mago")) {
             System.out.println("Mana: " + mana);
         }
-
         System.out.println("----------------------------");
     }
 
     public void desenharPersonagem(int personagem) {
         System.out.println("Representacao do personagem:");
-        switch(personagem) {
+        switch (personagem) {
             case 1:
                 System.out.println("  /\\");
                 System.out.println(" /__\\");
@@ -99,4 +113,3 @@ public class Personagens {
         }
     }
 }
-
