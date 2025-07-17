@@ -1,14 +1,78 @@
 public class Livro{
 
     //================Atributos=============
-    public int codigo;
-    public String titulo;
-    public String autor;
-    public String editora;
-    public int nrPginas;
-    public int edicao;
+    private  int codigo;
+    private String titulo;
+    private String autor;
+    private String editora;
+    private int nrPaginas;
+    private int edicao;
 
+
+
+    //================ metodo construtor============
+    Livro(){
+        this.codigo = 0;
+        this.titulo = "";
+        this.editora = "";
+        this.nrPaginas = 0;
+        this.edicao = 0;
+    }
     //================metodos===============
+
+    public int getCodigo(){
+        return codigo;
+    }
+
+    public void setCodigo(int valor){
+        codigo = valor;
+
+    }
+
+     public String getTitulo(){
+        return titulo;
+    }
+
+    public void setTitulo(String Titulo){
+        titulo = Titulo;
+
+    }
+
+     public String getAutor(){
+        return autor;
+    }
+
+    public void setAutor(String Autor){
+        autor = Autor;
+
+    }
+
+     public String getEditora(){
+        return editora;
+    }
+
+    public void setEditora(String Editora){
+        editora = Editora;
+
+    }
+
+     public int getNrPaginas(){
+        return nrPaginas;
+    }
+
+    public void setNrPaginas(int NrPaginas){
+        nrPaginas = NrPaginas;
+    }
+
+     public int getEdicao(){
+        return edicao;
+    }
+
+    public void setEdicao(int Edicao){
+        edicao = Edicao;
+    }
+
+    
 
     public void Ler(){
         System.out.println("Estou lendo...");

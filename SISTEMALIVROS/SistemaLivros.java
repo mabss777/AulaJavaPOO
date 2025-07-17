@@ -1,61 +1,99 @@
-public class SistemaLivros{
-    public static void main(String[] args){
+public class SistemaLivros {
+    public static void main(String[] args) {
+        String mensagemBiblioteca;
+        String mensagemLivraria;
+        String mensagem;
+
         Livro livro = new Livro();
-        livro.codigo = 1;
-        livro.titulo = "Codigo da Vinci";
-        livro.editora = "Editora Flores";
-        livro.nrPginas = 100;
-        livro.edicao = 3;
+
+        System.out.println("=========== livro =============");
+        livro.setCodigo(1);
+        livro.setTitulo("Codigo da Vinci");
+        livro.setEditora("Editora Flores");
+        livro.setNrPaginas(100);
+        livro.setEdicao(3);
 
         livro.Ler();
         livro.Cadastrar();
         livro.Localizar();
+        System.out.println("\n");
 
-        //=======Livro Biblioteca======
+        mensagem =
+            "Codigo do Livro: " + livro.getCodigo() + "\n" +
+            "Titulo: " + livro.getTitulo() + "\n" +
+            "Editora: " + livro.getEditora() + "\n" +
+            "Numero de Paginas: " + livro.getNrPaginas() + "\n" +
+            "Edicao: " + livro.getEdicao() + "\n";
+
+        System.out.println("\nLivro: \n" + mensagem);
+
+        System.out.println("=======Livro Biblioteca======\n");
 
         LivroBiblioteca livrobiblioteca = new LivroBiblioteca();
 
-        livrobiblioteca.codigo = 11;
-        livrobiblioteca.titulo = "Cinderela";
-        livrobiblioteca.autor = "Desconhecido";
-        livrobiblioteca.editora = "Editora Fantastico";
-        livrobiblioteca.nrPginas = 200;
-        livrobiblioteca.edicao = 6;
-        livrobiblioteca.localPrateleira = "Prateleira AB2";
-        livrobiblioteca.categoria = "Animacao";
-        livrobiblioteca.prazoEntrega = 10;
-        livrobiblioteca.nomeQuemEmprestou = "Meibs";  
+        livrobiblioteca.setCodigo(11);
+        livrobiblioteca.setTitulo("Cinderela");
+        livrobiblioteca.setAutor("Desconhecido");
+        livrobiblioteca.setEditora("Editora Fantastico");
+        livrobiblioteca.setNrPaginas(200);
+        livrobiblioteca.setEdicao(6);
+        livrobiblioteca.setLocalPrateleira("Prateleira AB2");
+        livrobiblioteca.setCategoria("Animacao");
+        livrobiblioteca.setPrazoEntrega(10);
+        livrobiblioteca.setNomeQuemEmprestou("Meibs");
 
         livrobiblioteca.Ler();
         livrobiblioteca.Cadastrar();
         livrobiblioteca.Localizar();
         livrobiblioteca.Alugar();
         livrobiblioteca.Devolver();
+        System.out.println("\n");
 
+        mensagemBiblioteca =
+            "Codigo do Livro: " + livrobiblioteca.getCodigo() + "\n" +
+            "Titulo: " + livrobiblioteca.getTitulo() + "\n" +
+            "Editora: " + livrobiblioteca.getEdicao() + "\n" +
+            "Numero de Paginas: " + livrobiblioteca.getNrPaginas() + "\n" +
+            "Edicao: " + livrobiblioteca.getEdicao() + "\n" +
+            "Local na Prateleira: " + livrobiblioteca.getLocalPrateleira() + "\n" +
+            "Categoria: " + livrobiblioteca.getCategoria() + "\n" +
+            "Prazo de entrega: " + livrobiblioteca.getPrazoEntrega() + "\n" +
+            "Nome de quem emprestou o livro: " + livrobiblioteca.getNomeQuemEmprestou() + "\n";
 
-        //=======livro Livraria=========
+        System.out.println("\nLivro da Biblioteca: \n" + mensagemBiblioteca);
+
+        System.out.println("=======livro Livraria=========\n");
 
         LivroLivraria livrolivraria = new LivroLivraria();
 
-        livrolivraria.codigo = 147;
-        livrolivraria.titulo = "As pequenas coisas";
-        livrolivraria.autor = "Jojo Moyes";
-        livrolivraria.editora = "Editora Arqueiro";
-        livrolivraria.nrPginas = 327;
-        livrolivraria.edicao = 2;
-        livrolivraria.localPrateleira = "Prateleira M32";
-        livrolivraria.categoria = "Romance";
-        livrolivraria.novoOuUsado = "Novo";
-        livrolivraria.preco = 52.90;
+        livrolivraria.setCodigo(147);
+        livrolivraria.setTitulo("As pequenas coisas");
+        livrolivraria.setAutor("Jojo Moyes");
+        livrolivraria.setEditora("Editora Arqueiro");
+        livrolivraria.setNrPaginas(327);
+        livrolivraria.setEdicao(2);
+        livrolivraria.setLocalPrateleira("Prateleira M32");
+        livrolivraria.setCategoria("Romance");
+        livrolivraria.setNovoOuUsado("Novo");
+        livrolivraria.setPreco(52.90);
 
         livrolivraria.Ler();
         livrolivraria.Cadastrar();
         livrolivraria.Localizar();
         livrolivraria.Vender();
+        System.out.println("\n");
 
+        mensagemLivraria =
+            "Codigo do Livro: " + livrolivraria.getCodigo() + "\n" +
+            "Titulo: " + livrolivraria.getTitulo() + "\n" +
+            "Editora: " + livrolivraria.getEdicao() + "\n" +
+            "Numero de Paginas: " + livrolivraria.getNrPaginas() + "\n" +
+            "Edicao: " + livrolivraria.getEdicao() + "\n" +
+            "Local na Prateleira: " + livrolivraria.getLocalPrateleira() + "\n" +
+            "Categoria: " + livrolivraria.getCategoria() + "\n" +
+            "Eh novo ou usado? " + livrolivraria.getNovoOuUsado() + "\n" +
+            "Preco: R$" + livrolivraria.getPreco() + "\n";
 
-
-
-
+        System.out.println("\nLivro da Livraria: \n" + mensagemLivraria);
     }
 }
