@@ -111,7 +111,7 @@ public class SistemaLivros {
         System.out.println("Livro 3: "+livro3.getTitulo());
 
         LivroBiblioteca Livrobiblioteca = new LivroBiblioteca(151,"Crepusculo","Vampiros","Arqueiro",287, 6, "D43", "Romance e ficcao", 10, "Roberval" );
-        System.out.println("Livro da biblioteca: "+livrobiblioteca.getTitulo());
+        System.out.println("Livro da biblioteca: "+Livrobiblioteca.getTitulo());
 
     }
 }

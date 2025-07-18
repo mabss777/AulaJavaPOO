@@ -60,15 +60,27 @@ public class LivroBiblioteca extends Livro {
     }
 
     public void Alugar(){
-        System.out.println("Estou alugando...");
+        System.out.println("==========Alugando meu livro preferido na biblioteca===============");
     }
 
     public void Devolver(){
-        System.out.println("Estou devolvendo...");
+        System.out.println("============= Terminei de ler e agora estou devolvendo! =============");
     }
 
-    
-    public void Localizar(){
-        System.out.println("Estou localizando...");
+     @Override
+     public void Cadastrar(){
+        System.out.println("============= Acabei de cadastrar este livro que chegou! =============");
     }
+
+    @Override
+    public void Localizar(){
+        System.out.println("============= Estou localizando o livro na biblioteca! =============");
+    }
+
+    @Override
+    public void Ler(){
+        System.out.println("========== Estou lendo o livro! ===========");
+    }
+
+   
 }

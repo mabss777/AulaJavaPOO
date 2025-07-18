@@ -40,13 +40,23 @@ public class LivroLivraria extends Livro {
         novoOuUsado = NovoOuUsado;
     }
 
+    
     public void Vender(){
         System.out.println("Estou vendendo...");
     }
 
-        @Override
-    public void Localizar(){
-        System.out.println("localizando livro livraria");
+    @Override
+     public void Cadastrar(){
+        System.out.println("============= Acabei de cadastrar este livro que chegou! =============");
     }
- 
+
+    @Override
+    public void Localizar(){
+        System.out.println("============= Estou localizando o livro na livraria! =============");
+    }
+
+    @Override
+    public void Ler(){
+        System.out.println("========== Estou lendo o livro! ===========");
+    }
 }
