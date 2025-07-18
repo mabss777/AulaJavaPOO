@@ -6,7 +6,7 @@ public class SistemaLivros {
 
         Livro livro = new Livro();
 
-        System.out.println("=========== livro =============");
+        System.out.println("\n=========== livro =============\n");
         livro.setCodigo(1);
         livro.setTitulo("Codigo da Vinci");
         livro.setEditora("Editora Flores");
@@ -95,5 +95,25 @@ public class SistemaLivros {
             "Preco: R$" + livrolivraria.getPreco() + "\n";
 
         System.out.println("\nLivro da Livraria: \n" + mensagemLivraria);
+
+        //exemplo metodo construtor
+        Livro novoLivro = new Livro();
+        System.out.println("Novo livro: "+novoLivro.getTitulo());
+        novoLivro.setTitulo("Rosas vermelhas");
+        System.out.println("Novo livro: "+novoLivro.getTitulo());
+
+        //metodo com parametros
+        Livro livro2 = new Livro(99, "Titanic");
+        System.out.println("Livro 2: "+livro2.getTitulo());
+
+        //metodo com todos os parametros 
+        Livro livro3 = new Livro(1,"O ultimo adeus","Cynthia","DarkSide",348,1);
+        System.out.println("Livro 3: "+livro3.getTitulo());
+
+        LivroBiblioteca Livrobiblioteca = new LivroBiblioteca(151,"Crepusculo","Vampiros","Arqueiro",287, 6, "D43", "Romance e ficcao", 10, "Roberval" );
+        System.out.println("Livro da biblioteca: "+livrobiblioteca.getTitulo());
+
     }
 }
+
+ 

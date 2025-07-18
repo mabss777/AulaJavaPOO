@@ -6,6 +6,25 @@ public class LivroBiblioteca extends Livro {
     private int prazoEntrega;
     private String nomeQuemEmprestou;
 
+    //metodo FILHO
+    LivroBiblioteca(){
+    }
+
+    //metodo FILHO COM PARAMETROS
+    LivroBiblioteca(int codigo,String titulo,String autor, String editora,int nrPaginas,int edicao, String localPrateleira, String categoria, int prazoEntrega, String nomeQuemEmprestou){
+        
+        //ACESSO AO METODO CONSTRUTOR PAI
+        super(codigo, titulo, autor, editora, nrPaginas, edicao);
+        this.localPrateleira = localPrateleira;
+        this.categoria = categoria;
+        this.prazoEntrega = prazoEntrega;
+        this.nomeQuemEmprestou = nomeQuemEmprestou;
+                    }
+
+
+        
+
+
     //========metodos==========
 
      public String getLocalPrateleira(){
@@ -46,5 +65,10 @@ public class LivroBiblioteca extends Livro {
 
     public void Devolver(){
         System.out.println("Estou devolvendo...");
+    }
+
+    
+    public void Localizar(){
+        System.out.println("Estou localizando...");
     }
 }
