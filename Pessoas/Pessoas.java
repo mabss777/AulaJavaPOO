@@ -5,7 +5,7 @@ public class Pessoas {
     private String nacionalidade;
     private double altura;
     private int idade;
-    private boolean professorOuAluno;
+    private String genero;
 
 //============= metodos =============
 
@@ -41,12 +41,21 @@ public class Pessoas {
         idade = Idade;
     }
 
-    public boolean getProfessorOuAluno(){
-        return professorOuAluno;
+    public String getGenero(){
+        return genero;
     }
 
-    public void setProfessorOuAluno(boolean ProfessorOuAluno){
-        professorOuAluno = ProfessorOuAluno;
+    public void setGenero(String Genero){
+        genero = Genero;
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("----- Informacoes -----");
+        System.out.println("Nome: " + nome);
+        System.out.println("Nacionalidade: " + nacionalidade);
+        System.out.println("Altura: " + altura + "m");
+        System.out.println("Idade: " + idade + " anos");
+        System.out.println("Genero: " + genero);
     }
 
     
