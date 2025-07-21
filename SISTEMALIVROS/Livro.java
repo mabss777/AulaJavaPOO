@@ -43,7 +43,7 @@ public class Livro{
 
     public Livro(int i, String string, String string2, String string3, int j, int k, String string4, String string5,
             int l, String string6) {
-        //TODO Auto-generated constructor stub
+
     }
 
     public int getCodigo(){
